@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Hotelset</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_password">Password</string>
+    <string name="msg_form_email">Enter your email</string>
+    <string name="msg_form_password">Enter your password</string>
+    <string name="msg_btLogin">Login</string>
+    <string name="msg_btRegister">Register</string>
+    <string name="msg_LoginErrorMessage">Error while trying to login.</string>
+    <string name="msg_RegisterErrorMessage">Error while trying to register.</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Log Out</string>
+
+    <string name="menu_hotel">Hoteles</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="msg_hotelForm_name">Hotel name</string>
+    <string name="msg_hotelForm_address">Hotel address</string>
+    <string name="msg_hotelForm_description">Hotel description</string>
+    <string name="msg_hotelForm_phonenumber">Hotel phone number</string>
+    <string name="msg_hotelForm_website">Hotel website</string>
+    <string name="msg_hotelForm_email">Hotel email</string>
+    <string name="msg_add_lugar">Hotel added succesfully!</string>
+
+
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ui.hotel.AddHotelFragment" >
+
+    <LinearLayout
+        android:layout_width="402dp"
+        android:layout_height="568dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/et_AddHotel_name"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:ems="20"
+            android:hint="@string/msg_hotelForm_name"
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_AddHotel_address"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:ems="20"
+            android:hint="@string/msg_hotelForm_address"
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_AddHotel_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:hint="@string/msg_hotelForm_description"
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_AddHotel_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:hint="@string/msg_hotelForm_phonenumber"
+            android:inputType="phone"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_AddHotel_website"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:ems="20"
+            android:hint="@string/msg_hotelForm_website"
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_AddHotel_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:hint="@string/msg_hotelForm_email"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btAddHotel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Hotel"
+            app:rippleColor="@color/purple_200" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

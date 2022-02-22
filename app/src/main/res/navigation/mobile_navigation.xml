@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_hotel">
+
+    <fragment
+        android:id="@+id/nav_hotel"
+        android:name="com.hotelset.ui.hotel.HotelFragment"
+        android:label="@string/menu_hotel"
+        tools:layout="@layout/fragment_hotel" >
+        <action
+            android:id="@+id/action_nav_hotel_to_addHotelFragment"
+            app:destination="@id/nav_addHotel" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.hotelset.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.hotelset.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_addHotel"
+        android:name="com.hotelset.ui.hotel.AddHotelFragment"
+        android:label="Add Hotel"
+        tools:layout="@layout/fragment_add_hotel">
+        <action
+            android:id="@+id/action_addHotelFragment_to_nav_hotel"
+            app:destination="@id/nav_hotel" />
+    </fragment>
+</navigation>
