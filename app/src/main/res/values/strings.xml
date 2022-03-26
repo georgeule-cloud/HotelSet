@@ -17,7 +17,7 @@
     <string name="action_logout">Log Out</string>
 
     <string name="menu_hotel">Hoteles</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_noticias">Noticias</string>
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="msg_hotelForm_name">Hotel name</string>
@@ -32,9 +32,8 @@
     <string name="msg_update_hotel">Hotel updated succesfully!</string>
     <string name="msg_borrar">¿Seguro que desea eliminar el hotel seleccionado?</string>
     <string name="bt_delete">Eliminar</string>
-
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no">No</string>
     <string name="si">Sí</string>
-
 
 </resources>
