@@ -27,6 +27,12 @@
     <string name="msg_hotelForm_website">Hotel website</string>
     <string name="msg_hotelForm_email">Hotel email</string>
     <string name="msg_add_lugar">Hotel added succesfully!</string>
+    <string name="msg_update_lugar">Hotel updated succesfully!</string>
+    <string name="msg_borrar">¿Seguro que desea eliminar el hotel seleccionado?</string>
+    <string name="bt_delete">Eliminar</string>
+
+    <string name="no">No</string>
+    <string name="si">Sí</string>
 
 
 </resources>

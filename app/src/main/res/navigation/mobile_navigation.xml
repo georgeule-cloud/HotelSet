@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_hotel_to_addHotelFragment"
             app:destination="@id/nav_addHotel" />
+        <action
+            android:id="@+id/action_nav_hotel_to_updateHotelFragment"
+            app:destination="@id/nav_updateHotel" />
     </fragment>
 
     <fragment
@@ -34,5 +37,17 @@
         <action
             android:id="@+id/action_addHotelFragment_to_nav_hotel"
             app:destination="@id/nav_hotel" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_updateHotel"
+        android:name="com.hotelset.ui.hotel.UpdateHotelFragment"
+        android:label="UpdateHotelFragment"
+        tools:layout="@layout/fragment_update_hotel">
+        <action
+            android:id="@+id/action_updateHotelFragment_to_nav_hotel"
+            app:destination="@id/nav_hotel" />
+        <argument
+            android:name="hotel"
+            app:argType="com.hotelset.model.Hotel" />
     </fragment>
 </navigation>
