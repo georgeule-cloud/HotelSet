@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
         mAuth = Firebase.auth
 
-        binding.btFormRegister.setOnClickListener{ register()}
+        binding.btFormRegister.setOnClickListener{ val intent = Intent(this, Register::class.java)
+            startActivity(intent)}
         binding.btFormLogin.setOnClickListener{ login()}
 
 
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+/*
     private fun register() {
         val email = binding.etEmailAddress.text.toString()
         val password = binding.etPassword.text.toString()
@@ -75,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-    }
+    }*/
 
     public override fun onStart(){
         super.onStart()

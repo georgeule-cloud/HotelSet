@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hotelset">
         <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
             android:name=".MainMenu"
             android:exported="false"
             android:label="@string/title_activity_main_menu"
