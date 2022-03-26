@@ -5,12 +5,17 @@
       <map>
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/drawable/ic_person.xml" value="0.1" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/activity_main_menu.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/activity_main_menu.xml" value="0.33825816485225507" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/app_bar_main_menu.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/content_main_menu.xml" value="0.3625" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/fragment_add_hotel.xml" value="0.33" />
+        <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/fragment_gallery.xml" value="0.55" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/fragment_hotel.xml" value="0.33" />
+        <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/fragment_noticias.xml" value="0.25" />
+        <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/fragment_slideshow.xml" value="0.55" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/hotel_card.xml" value="0.5" />
+        <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/nav_header_main_menu.xml" value="0.55" />
+        <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/layout/noticia_fila.xml" value="0.67" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/menu/activity_main_drawer.xml" value="0.3569230769230769" />
         <entry key="..\:/Users/georg/Documents/Hotelset/app/src/main/res/menu/main_menu.xml" value="0.33" />
       </map>

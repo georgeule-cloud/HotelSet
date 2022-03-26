@@ -17,7 +17,7 @@
     <string name="action_logout">Log Out</string>
 
     <string name="menu_hotel">Hoteles</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_noticias">Noticias</string>
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="msg_hotelForm_name">Hotel name</string>
@@ -27,6 +27,8 @@
     <string name="msg_hotelForm_website">Hotel website</string>
     <string name="msg_hotelForm_email">Hotel email</string>
     <string name="msg_add_lugar">Hotel added succesfully!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
