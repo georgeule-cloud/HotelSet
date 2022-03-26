@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/drawable/ic_add.xml" value="0.1595" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/drawable/ic_login.xml" value="0.1595" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/drawable/ic_logout.xml" value="0.1595" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/drawable/ic_salir.xml" value="0.1595" />
@@ -10,6 +11,7 @@
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/layout/activity_main_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/layout/content_main_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/layout/fragment_agregar_noticia.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/layout/fragment_hotel.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/layout/fragment_noticias.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/edder/AndroidStudioProjects/HotelSet/app/src/main/res/layout/register.xml" value="0.25416666666666665" />
