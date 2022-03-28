@@ -16,8 +16,11 @@ val id : Int,
 @ColumnInfo(name = "titulo")
 val name: String,
 
-@ColumnInfo(name = "image")
-val image: String?,
+@ColumnInfo(name = "cuerpo")
+val body: String,
+
+//@ColumnInfo(name = "image")
+//val image: String?,
 
 
 ) : Parcelable

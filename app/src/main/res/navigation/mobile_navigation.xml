@@ -22,7 +22,11 @@
         android:id="@+id/nav_noticias"
         android:name="com.hotelset.ui.noticias.NoticiasFragment"
         android:label="@string/menu_noticias"
-        tools:layout="@layout/fragment_noticias" />
+        tools:layout="@layout/fragment_noticias" >
+        <action
+            android:id="@+id/action_nav_noticias_to_addNoticiaFragment"
+            app:destination="@id/addNoticiaFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
@@ -49,5 +53,14 @@
         <argument
             android:name="hotel"
             app:argType="com.hotelset.model.Hotel" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoticiaFragment"
+        android:name="com.hotelset.ui.noticias.AddNoticiaFragment"
+        android:label="fragment_add_noticia"
+        tools:layout="@layout/fragment_add_noticia" >
+        <action
+            android:id="@+id/action_addNoticiaFragment_to_nav_noticias"
+            app:destination="@id/nav_noticias" />
     </fragment>
 </navigation>
