@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
         mAuth = Firebase.auth
 
-        binding.btFormRegister.setOnClickListener{ val intent = Intent(this, Register::class.java)
+        binding.btFormRegister.setOnClickListener{ val intent = Intent(this, Registro::class.java)
             startActivity(intent)}
         binding.btFormLogin.setOnClickListener{ login()}
 
