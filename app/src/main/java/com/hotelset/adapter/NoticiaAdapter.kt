@@ -1,12 +1,10 @@
 package com.hotelset.adapter
 
-import android.R
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hotelset.databinding.NoticiaFilaBinding
 import com.hotelset.model.Noticia
-import kotlin.random.Random
 
 class NoticiaAdapter: RecyclerView.Adapter<NoticiaAdapter.NoticiaViewHolder>() {
 
@@ -21,6 +19,7 @@ class NoticiaAdapter: RecyclerView.Adapter<NoticiaAdapter.NoticiaViewHolder>() {
         RecyclerView.ViewHolder(itemBinding.root) {
         fun binData(noticia: Noticia){
             itemBinding.noticiaTitle.text = noticia.name
+            itemBinding.noticiaDescription.text = noticia.body
         }
     }
 

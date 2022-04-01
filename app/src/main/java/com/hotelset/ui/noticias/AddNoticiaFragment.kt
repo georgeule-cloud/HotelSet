@@ -11,10 +11,10 @@ import androidx.navigation.fragment.findNavController
 import com.hotelset.R
 import com.hotelset.databinding.FragmentAddNoticiaBinding
 import com.hotelset.model.Noticia
-import com.hotelset.viewmodel.NoticiasViewModel
+import com.hotelset.viewmodel.NoticiaViewModel
 
 class AddNoticiaFragment : Fragment() {
-    private lateinit var noticiasViewModel: NoticiasViewModel
+    private lateinit var noticiaViewModel: NoticiaViewModel
 
     private var _binding: FragmentAddNoticiaBinding? = null
     private val binding get() = _binding!!
@@ -24,8 +24,8 @@ class AddNoticiaFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        noticiasViewModel =
-            ViewModelProvider(this).get(NoticiasViewModel::class.java)
+        noticiaViewModel =
+            ViewModelProvider(this).get(NoticiaViewModel::class.java)
 
         _binding = FragmentAddNoticiaBinding.inflate(inflater, container, false)
         binding.btAddNoticia.setOnClickListener{
@@ -39,7 +39,7 @@ class AddNoticiaFragment : Fragment() {
         if (name.isNotEmpty()){
             val body = binding.etAddNoticiaBody.text.toString()
             val noticia = Noticia(0,name,body/*,image*/)
-            noticiasViewModel.addNoticia(noticia)
+            noticiaViewModel.addNoticia(noticia)
             Toast.makeText(requireContext(),getString(R.string.msg_add_new), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addNoticiaFragment_to_nav_noticias)
         }
