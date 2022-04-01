@@ -3,20 +3,17 @@ package com.hotelset.viewmodel
 import android.app.Application
 import androidx.lifecycle.*
 import com.hotelset.data.HotelDao
-import com.hotelset.data.HotelDatabase
 import com.hotelset.model.Hotel
 import com.hotelset.repository.HotelRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HotelViewModel (application: Application) : AndroidViewModel(application) {
-    val getAllHotels: LiveData<List<Hotel>>
+    val getAllHotels: MutableLiveData<List<Hotel>>
 
-    private val repository : HotelRepository
+    private val repository : HotelRepository = HotelRepository(HotelDao())
 
     init {
-        val hotelDao = HotelDatabase.getDatabase(application).hotelDao()
-        repository = HotelRepository(hotelDao)
         getAllHotels = repository.getAllHotels
     }
 
