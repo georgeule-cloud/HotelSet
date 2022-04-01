@@ -1,21 +1,78 @@
 package com.hotelset.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.lifecycle.MutableLiveData
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
+import com.google.firebase.ktx.Firebase
 import com.hotelset.model.Hotel
+import com.hotelset.model.Noticia
 
-@Dao
-interface HotelDao {
+class HotelDao {
+
+    private val coleccion1 = "hotelAPP"
+    private val coleccion2 = "misHoteles"
+    private val usuario = Firebase.auth.currentUser?.email.toString()
+    private var firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+
+    init {
+        firestore.firestoreSettings = FirebaseFirestoreSettings.Builder().build()
+    }
+
     //Funcion para obtener la lista de hoteles
-    @Query("select * from hotel")
-    fun getAllHotels(): LiveData<List<Hotel>>
+    fun getHotels(): MutableLiveData<List<Hotel>> {
+        val listaHoteles = MutableLiveData<List<Hotel>>()
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addHotel(lugar: Hotel)
+        firestore.collection(coleccion1).document(usuario).collection(coleccion2)
+            .addSnapshotListener{ instantanea, e ->
+                if (e != null){
+                    return@addSnapshotListener
+                }
 
-    @Update(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun updateHotel(lugar: Hotel)
+                if(instantanea != null){
+                    val lista = ArrayList<Hotel>()
 
-    @Delete
-    suspend fun deleteHotel(lugar: Hotel)
+                    instantanea.documents.forEach{
+                        val hotel = it.toObject(Hotel::class.java)
+                        if (hotel!= null){
+                            lista.add(hotel)
+                        }
+                    }
+                    listaHoteles.value = lista
+                }
+            }
+
+        return listaHoteles
+
+    }
+
+    suspend fun saveHotel(hotel: Hotel){
+
+        val documento: DocumentReference
+
+        if (hotel.id.isEmpty()){
+            documento = firestore.collection(coleccion1).document(usuario).collection(coleccion2).document()
+            hotel.id = documento.id
+        }else{
+            documento = firestore.collection(coleccion1).document(usuario).collection(coleccion2).document(hotel.id)
+        }
+
+        documento.set(hotel)
+            .addOnSuccessListener { Log.d("saveHotel","Hotel agregado/modificado") }
+            .addOnCanceledListener { Log.e("saveHotel","Error: Hotel NO agregado/modificado") }
+
+    }
+
+    suspend fun deleteHotel(hotel: Hotel){
+
+        if (hotel.id.isNotEmpty()){
+            firestore.collection(coleccion1).document(usuario).collection(coleccion2).document(hotel.id).delete()
+                .addOnSuccessListener { Log.d("deleteHotel","Hotel eliminado") }
+                .addOnCanceledListener { Log.e("deleteHotel","Error: Hotel NO eliminado") }
+        }
+
+    }
 }

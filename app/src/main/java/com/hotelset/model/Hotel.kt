@@ -1,52 +1,39 @@
 package com.hotelset.model
 
 import android.os.Parcelable
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity (tableName = "hotel")
 data class Hotel(
 
-@PrimaryKey(autoGenerate = true)
-val id : Int,
+    var id : String,
 
-@ColumnInfo(name = "name")
-val name: String,
+    val name: String,
 
-@ColumnInfo(name = "address")
-val address: String?,
+    val address: String?,
 
-@ColumnInfo(name = "description")
-val description: String?,
+    val description: String?,
 
-@ColumnInfo(name = "phonenumber")
-val phonenumber: String?,
+    val phonenumber: String?,
 
-@ColumnInfo(name = "website")
-val website: String?,
-@ColumnInfo(name = "email")
-val email: String?,
+    val website: String?,
 
-@ColumnInfo(name = "latitude")
-val latitude: Double?,
+    val email: String?,
 
-@ColumnInfo(name = "longitude")
-val longitude: Double?,
+    val latitude: Double?,
 
-@ColumnInfo(name = "height")
-val height: Double?,
+    val longitude: Double?,
 
-@ColumnInfo(name = "stars")
-val stars: Int?,
+    val height: Double?,
 
-@ColumnInfo(name = "rating")
-val rating: Double?,
+    val stars: Int?,
 
-@ColumnInfo(name = "image")
-val images: String?,
+    val rating: Double?,
+
+    val images: String?,
 
 
-) : Parcelable
+    ) : Parcelable{
+    constructor() :
+            this("","","","","","","",0.0,0.0,0.0,0,0.0,"")
+}
