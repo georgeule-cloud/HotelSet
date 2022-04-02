@@ -1,12 +1,10 @@
 package com.hotelset.adapter
 
-import android.R
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hotelset.databinding.HotelCardBinding
 import com.hotelset.model.Hotel
-import kotlin.random.Random
 
 class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
 

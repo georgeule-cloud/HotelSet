@@ -8,15 +8,17 @@
     tools:context=".ui.noticias.NoticiasFragment" >
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/floatingActionButtonNoticiasAdd"
         android:layout_width="60dp"
         android:layout_height="59dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
         android:clickable="true"
         android:src="@drawable/ic_add"
+        app:backgroundTint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="30dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/noticiasRecycler"

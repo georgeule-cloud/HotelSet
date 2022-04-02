@@ -34,7 +34,7 @@ class MainMenu : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_hotel, R.id.nav_noticias, R.id.nav_slideshow
+                R.id.nav_hotel, R.id.nav_noticias, R.id.nav_aboutUs
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -18,7 +18,7 @@
 
     <string name="menu_hotel">Hoteles</string>
     <string name="menu_noticias">Noticias</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_aboutus">Sobre Nosotros</string>
 
     <string name="msg_hotelForm_name">Hotel name</string>
     <string name="msg_hotelForm_titleNew">Title</string>
@@ -35,5 +35,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no">No</string>
     <string name="si">Sí</string>
+    <string name="misionTexto">La misión de nosotros es proveer a los turistas en Costa Rica, una vía fácil y rápida para enterarse sobre los hoteles existentes y noticias de esta área desde la palma de su mano.</string>
+    <string name="visionTexto">Deseamos ser una empresa líder en turismo en Costa Rica, reconocida por parte de los usuarios, empleados, clientes y todos los grupos de interés relacionados con la actividad de la compañía.</string>
+    <string name="valoresTexto">Nuestros valores se basan en el Servicio, la Libertad, la Pasión y la Claridad en todas nuestras actividades.</string>
+    <string name="misionTitle">Mision</string>
+    <string name="visionTitle">Vision</string>
+    <string name="valoresTitle">Valores</string>
 
 </resources>
