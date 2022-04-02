@@ -2,9 +2,11 @@ package com.hotelset.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.hotelset.databinding.HotelCardBinding
 import com.hotelset.model.Hotel
+import com.hotelset.ui.hotel.HotelFragmentDirections
 
 class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
 
@@ -21,9 +23,14 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
             itemBinding.tvName.text = hotel.name
             itemBinding.tvDescription.text = hotel.description
             itemBinding.tvPhonenumber.text = hotel.phonenumber
-
             itemBinding.rbStars.rating = (1..5).random().toFloat()
-
+            val accion = HotelFragmentDirections.actionNavHotelToUpdateHotelFragment(hotel)
+            itemBinding.viewCard.setOnClickListener{
+                itemView.findNavController().navigate(accion)
+            }
+            itemBinding.button.setOnClickListener{
+                itemView.findNavController().navigate(accion)
+            }
         }
     }
 

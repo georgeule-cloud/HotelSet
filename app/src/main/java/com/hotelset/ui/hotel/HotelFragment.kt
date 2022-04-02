@@ -36,6 +36,7 @@ class HotelFragment : Fragment() {
             findNavController().navigate(R.id.action_nav_hotel_to_addHotelFragment)
         }
 
+
         val hotelAdapter=HotelAdapter()
         val hotelRecycler = binding.hotelsRecycler
 
