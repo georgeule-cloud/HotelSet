@@ -1,15 +1,14 @@
 package com.hotelset.repository
 
-import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.hotelset.data.NoticiaDao
-import com.hotelset.model.Hotel
 import com.hotelset.model.Noticia
 
 class NoticiaRepository (private val noticiaDao: NoticiaDao){
-    val getAllNoticias: LiveData<List<Noticia>> = noticiaDao.getAllNoticias()
+    val getAllNoticias: MutableLiveData<List<Noticia>> = noticiaDao.getNoticias()
 
     suspend fun addNoticia(noticia: Noticia) {
-        noticiaDao.addNoticia(noticia)
+        noticiaDao.saveNoticia(noticia)
     }
     suspend fun deleteNoticia(noticia: Noticia) {
         noticiaDao.deleteNoticia(noticia)
