@@ -11,10 +11,10 @@ import androidx.navigation.fragment.findNavController
 import com.hotelset.R
 import com.hotelset.databinding.FragmentAddNoticiaBinding
 import com.hotelset.model.Noticia
-import com.hotelset.viewmodel.NoticiasViewModel
+import com.hotelset.viewmodel.NoticiaViewModel
 
 class AddNoticiaFragment : Fragment() {
-    private lateinit var noticiasViewModel: NoticiasViewModel
+    private lateinit var noticiasViewModel: NoticiaViewModel
 
     private var _binding: FragmentAddNoticiaBinding? = null
     private val binding get() = _binding!!
@@ -25,7 +25,7 @@ class AddNoticiaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         noticiasViewModel =
-            ViewModelProvider(this).get(NoticiasViewModel::class.java)
+            ViewModelProvider(this).get(NoticiaViewModel::class.java)
 
         _binding = FragmentAddNoticiaBinding.inflate(inflater, container, false)
         binding.btAddNoticia.setOnClickListener{

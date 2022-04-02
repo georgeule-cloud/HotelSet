@@ -8,7 +8,7 @@ import com.hotelset.repository.NoticiaRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class NoticiasViewModel (application: Application) : AndroidViewModel(application) {
+class NoticiaViewModel (application: Application) : AndroidViewModel(application) {
     val getAllNoticias: MutableLiveData<List<Noticia>>
 
     private val repository : NoticiaRepository = NoticiaRepository(NoticiaDao())
