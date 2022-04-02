@@ -1,4 +1,4 @@
-package com.hotelset.ui.slideshow
+package com.hotelset.ui.about
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.hotelset.databinding.FragmentSlideshowBinding
 import com.hotelset.viewmodel.SlideshowViewModel
 
-class SlideshowFragment : Fragment() {
+class AboutFragment : Fragment() {
 
     private var _binding: FragmentSlideshowBinding? = null
 
@@ -29,10 +29,7 @@ class SlideshowFragment : Fragment() {
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 
