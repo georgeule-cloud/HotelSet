@@ -44,7 +44,7 @@ class AddHotelFragment : Fragment() {
             val website = binding.etAddHotelWebsite.text.toString()
             val hotel = Hotel("",name,address,description,phone,website,email,0.0,0.0,0.0,2,0.0,"")
             hotelViewModel.addHotel(hotel)
-            Toast.makeText(requireContext(),getString(R.string.msg_add_lugar), Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),getString(R.string.msg_add_hotel), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addHotelFragment_to_nav_hotel)
         }
     }

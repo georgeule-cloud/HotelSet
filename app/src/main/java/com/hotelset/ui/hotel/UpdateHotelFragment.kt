@@ -2,11 +2,8 @@ package com.hotelset.ui.hotel
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -45,7 +42,13 @@ class UpdateHotelFragment : Fragment() {
         binding.btUpdateHotel.setOnClickListener{
             updateHotel()
         }
+
+        setHasOptionsMenu(true) //Activa el menu del fragmento adicional
+
         return binding.root
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
