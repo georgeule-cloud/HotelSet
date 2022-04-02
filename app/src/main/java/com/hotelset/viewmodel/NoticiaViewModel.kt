@@ -16,7 +16,7 @@ class NoticiaViewModel (application: Application) : AndroidViewModel(application
     init {
         getAllNoticias = repository.getAllNoticias
     }
-
+    //
     fun addNoticia(noticia: Noticia) {
         viewModelScope.launch(Dispatchers.IO) {repository.addNoticia(noticia)}
     }
