@@ -27,8 +27,8 @@
     <string name="msg_hotelForm_phonenumber">Hotel phone number</string>
     <string name="msg_hotelForm_website">Hotel website</string>
     <string name="msg_hotelForm_email">Hotel email</string>
-    <string name="msg_add_lugar">Hotel added succesfully!</string>
-    <string name="msg_add_new">Hotel added succesfully!</string>
+    <string name="msg_add_noticia">Noticia added succesfully!</string>
+    <string name="msg_add_hotel">Hotel added succesfully!</string>
     <string name="msg_update_hotel">Hotel updated succesfully!</string>
     <string name="msg_borrar">¿Seguro que desea eliminar el hotel seleccionado?</string>
     <string name="bt_delete">Eliminar</string>

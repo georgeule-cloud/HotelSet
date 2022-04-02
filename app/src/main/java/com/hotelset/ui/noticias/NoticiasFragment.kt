@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hotelset.R
 import com.hotelset.databinding.FragmentNoticiasBinding
 import com.hotelset.viewmodel.NoticiaViewModel
 import com.hotelset.adapter.NoticiaAdapter
@@ -25,16 +27,24 @@ class NoticiasFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
+        val noticiaViewModel =
             ViewModelProvider(this).get(NoticiaViewModel::class.java)
 
         _binding = FragmentNoticiasBinding.inflate(inflater, container, false)
+
+        binding.floatingActionButtonNoticiasAdd.setOnClickListener{
+            findNavController().navigate(R.id.action_nav_noticias_to_addNoticiaFragment)
+        }
 
         val noticiaAdapter= NoticiaAdapter()
         val noticiaRecycler = binding.noticiasRecycler
 
         noticiaRecycler.adapter = noticiaAdapter
         noticiaRecycler.layoutManager = LinearLayoutManager(requireContext())
+
+        noticiaViewModel.getAllNoticias.observe(viewLifecycleOwner) { noticias ->
+            noticiaAdapter.setData(noticias)
+        }
         
         val root: View = binding.root
 
