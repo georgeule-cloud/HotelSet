@@ -7,22 +7,28 @@
     tools:context="ui.hotel.UpdateHotelFragment" >
 
     <LinearLayout
-        android:layout_width="402dp"
-        android:layout_height="568dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/et_AddHotel_name"
             android:layout_width="match_parent"
             android:layout_height="64dp"
+            android:layout_marginTop="36dp"
             android:ems="20"
             android:hint="@string/msg_hotelForm_name"
             android:inputType="textPersonName"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="5dp" />
 
         <EditText
             android:id="@+id/et_AddHotel_address"
@@ -69,12 +75,93 @@
             android:inputType="textEmailAddress"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/btUpdateHotel"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/bt_whatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/whatsapp_logo" />
+
+            <ImageButton
+                android:id="@+id/bt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="117dp"
+                android:src="@drawable/ic_baseline_phone_24" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update hotel"
-            app:rippleColor="@color/purple_200" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_latitud"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_longitud"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_altura"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/bt_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/msg_map_view"
+                android:src="@drawable/ic_location"
+                tools:ignore="ImageContrastCheck" />
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btUpdateHotel"
+        android:layout_width="136dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="40dp"
+        android:text="Update hotel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/purple_200" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

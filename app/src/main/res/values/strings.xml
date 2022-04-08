@@ -41,5 +41,12 @@
     <string name="misionTitle">Mision</string>
     <string name="visionTitle">Vision</string>
     <string name="valoresTitle">Valores</string>
+    <string name="msg_saludos">Hola,saludos</string>
+    <string name="msg_datos">Faltan datos</string>
+    <string name="msg_map_view">Ver lugar en mapa</string>
+
+    <string name="tv_latitud_lb">Latitud</string>
+    <string name="tv_longitud_lb">Longitud</string>
+    <string name="tv_altura_lb">Altura</string>
 
 </resources>
