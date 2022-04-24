@@ -30,10 +30,12 @@ data class Hotel(
 
     val rating: Double?,
 
-    val images: String?,
+    val rutaAudio: String?,
+
+    val rutaImagen: String?,
 
 
     ) : Parcelable{
     constructor() :
-            this("","","","","","","",0.0,0.0,0.0,0,0.0,"")
+            this("","","","","","","",0.0,0.0,0.0,0,0.0,"","")
 }

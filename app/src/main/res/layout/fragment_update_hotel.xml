@@ -77,20 +77,30 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <ImageButton
                 android:id="@+id/bt_whatsapp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/whatsapp_logo" />
 
             <ImageButton
                 android:id="@+id/bt_phone"
-                android:layout_width="match_parent"
-                android:layout_height="117dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/ic_baseline_phone_24" />
+
+            <ImageButton
+                android:id="@+id/btPlay"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/msg_escuchar_audio"
+                android:src="@drawable/ic_play" />
 
         </LinearLayout>
 
@@ -102,7 +112,7 @@
 
             <TextView
                 android:id="@+id/tv_latitud"
-                android:layout_width="0dp"
+                android:layout_width="90dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center|center_horizontal|center_vertical"
@@ -112,7 +122,7 @@
 
             <TextView
                 android:id="@+id/tv_longitud"
-                android:layout_width="0dp"
+                android:layout_width="90dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center|center_horizontal|center_vertical"
@@ -122,7 +132,7 @@
 
             <TextView
                 android:id="@+id/tv_altura"
-                android:layout_width="0dp"
+                android:layout_width="90dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center|center_horizontal|center_vertical"
@@ -132,14 +142,45 @@
 
             <ImageButton
                 android:id="@+id/bt_location"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/msg_map_view"
                 android:src="@drawable/ic_location"
                 tools:ignore="ImageContrastCheck" />
+
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/rb_stars"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="80dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="12dp"
+                android:numStars="5"
+                android:rating="4"
+                android:stepSize="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:contentDescription="@string/msg_imagen"
+            android:scaleType="centerInside"
+            tools:ignore="ImageContrastCheck"
+            tools:src="@tools:sample/backgrounds/scenic" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -147,21 +188,17 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/btUpdateHotel"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="40dp"
+            android:text="Update hotel"
+            android:textAlignment="center"
+            app:rippleColor="@color/purple_200" />
 
-    <Button
-        android:id="@+id/btUpdateHotel"
-        android:layout_width="136dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="40dp"
-        android:text="Update hotel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0"
-        app:rippleColor="@color/purple_200" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

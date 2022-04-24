@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
@@ -12,6 +13,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.hotelset.R
 import com.hotelset.databinding.FragmentUpdateHotelBinding
 import com.hotelset.model.Hotel
@@ -24,6 +26,8 @@ class UpdateHotelFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val args by navArgs<UpdateHotelFragmentArgs>()
+
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,10 +57,24 @@ class UpdateHotelFragment : Fragment() {
         binding.btLocation.setOnClickListener { verMapa() }
         binding.btPhone.setOnClickListener { hacerLlamda() }
 
+        if (args.hotel.rutaAudio?.isNotEmpty() == true){
+            mediaPlayer= MediaPlayer()
+            mediaPlayer.setDataSource(args.hotel.rutaAudio)
+            mediaPlayer.prepare()
+            binding.btPlay.isEnabled=true
+            binding.btPlay.setOnClickListener { mediaPlayer.start() }
+        }else{
+            binding.btPlay.isEnabled=false
+        }
 
+        if (args.hotel.rutaAudio?.isNotEmpty() == true){
+            Glide.with(requireContext())
+                .load(args.hotel.rutaImagen)
+                .fitCenter()
+                .into(binding.imagen)
+        }
 
-
-        setHasOptionsMenu(true) //Activa el menu del fragmento adicional
+        setHasOptionsMenu(true)
 
         return binding.root
     }
@@ -141,7 +159,7 @@ class UpdateHotelFragment : Fragment() {
             val description = binding.etAddHotelDescription.text.toString()
             val website = binding.etAddHotelWebsite.text.toString()
             val hotel = Hotel("",name,address,description,phone,website,email,
-                args.hotel.latitude,args.hotel.longitude,args.hotel.height,2,0.0,"")
+                args.hotel.latitude,args.hotel.longitude,args.hotel.height,2,0.0,"","")
             hotelViewModel.updateHotel(hotel)
             Toast.makeText(requireContext(),getString(R.string.msg_update_hotel), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_updateHotelFragment_to_nav_hotel)

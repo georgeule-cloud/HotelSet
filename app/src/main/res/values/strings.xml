@@ -48,5 +48,13 @@
     <string name="tv_latitud_lb">Latitud</string>
     <string name="tv_longitud_lb">Longitud</string>
     <string name="tv_altura_lb">Altura</string>
+    <string name="todo">todo</string>
+    <string name="msg_imagen">Imagen del lugar</string>
+    <string name="msg_subiendo_audio">Subiendo nota de audio</string>
+    <string name="msg_graba_audio">Grabando nota de audio</string>
+    <string name="msg_detener_audio">Nota de audio detenida</string>
+
+    <string name="msg_rating">Calificación</string>
+    <string name="msg_escuchar_audio">Escuchar nota de audio</string>
 
 </resources>
