@@ -56,5 +56,6 @@
 
     <string name="msg_rating">Calificación</string>
     <string name="msg_escuchar_audio">Escuchar nota de audio</string>
+    <string name="nav_simbologia">Simbología</string>
 
 </resources>

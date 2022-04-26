@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_noticias"
             android:title="@string/menu_noticias" />
         <item
+            android:id="@+id/nav_simbologia"
+            android:icon="@drawable/ic_simbologia"
+            android:title="@string/nav_simbologia" />
+        <item
             android:id="@+id/nav_aboutUs"
             android:icon="@drawable/ic_baseline_info_24"
             android:title="@string/menu_aboutus" />
