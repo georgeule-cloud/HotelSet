@@ -29,6 +29,14 @@
     </fragment>
 
     <fragment
+        android:id="@+id/nav_simbologia"
+        android:name="com.hotelset.ui.about.SimbologiaFragment"
+        android:label="@string/nav_simbologia"
+        tools:layout="@layout/fragment_simbologia" >
+
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_aboutUs"
         android:name="com.hotelset.ui.about.AboutFragment"
         android:label="@string/menu_aboutus"
