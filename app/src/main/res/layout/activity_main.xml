@@ -22,9 +22,8 @@
 
     <Button
         android:id="@+id/bt_form_register"
-        android:layout_width="170dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="201dp"
+        android:layout_height="52dp"
         android:text="@string/msg_btRegister"
         app:icon="@drawable/ic_register_user"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,13 +31,13 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_form_login"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.114" />
 
     <Button
         android:id="@+id/bt_form_login"
-        android:layout_width="170dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="46dp"
+        android:layout_width="197dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
         android:text="@string/msg_btLogin"
         app:icon="@drawable/ic_login"
         app:layout_constraintEnd_toEndOf="parent"
