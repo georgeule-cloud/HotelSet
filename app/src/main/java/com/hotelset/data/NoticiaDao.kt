@@ -13,9 +13,7 @@ import com.hotelset.model.Noticia
 
 class NoticiaDao {
 
-    private val coleccion1 = "hotelAPP"
-    private val coleccion2 = "misNoticias"
-    private val usuario = Firebase.auth.currentUser?.email.toString()
+    private val coleccion1 = "noticias"
     private var firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     init{
@@ -26,7 +24,7 @@ class NoticiaDao {
     fun getNoticias(): MutableLiveData<List<Noticia>> {
         val listaNoticias = MutableLiveData<List<Noticia>>()
 
-        firestore.collection(coleccion1).document(usuario).collection(coleccion2)
+        firestore.collection(coleccion1)
             .addSnapshotListener{ instantanea, e ->
                 if (e != null){
                     return@addSnapshotListener
@@ -54,10 +52,10 @@ class NoticiaDao {
             val documento: DocumentReference
 
             if (noticia.id.isEmpty()){
-                documento = firestore.collection(coleccion1).document(usuario).collection(coleccion2).document()
+                documento = firestore.collection(coleccion1).document()
                 noticia.id = documento.id
             }else{
-                documento = firestore.collection(coleccion1).document(usuario).collection(coleccion2).document(noticia.id)
+                documento = firestore.collection(coleccion1).document(noticia.id)
             }
 
             documento.set(noticia)
@@ -69,7 +67,7 @@ class NoticiaDao {
     suspend fun deleteNoticia(noticia: Noticia){
 
         if (noticia.id.isNotEmpty()){
-            firestore.collection(coleccion1).document(usuario).collection(coleccion2).document(noticia.id).delete()
+            firestore.collection(coleccion1).document(noticia.id).delete()
                 .addOnSuccessListener { Log.d("deleteNoticia","Noticia eliminada") }
                 .addOnCanceledListener { Log.e("deleteNoticia","Error: Noticia NO eliminada") }
         }
