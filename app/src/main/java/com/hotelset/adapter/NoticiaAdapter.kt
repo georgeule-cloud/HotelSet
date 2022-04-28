@@ -31,7 +31,7 @@ class NoticiaAdapter: RecyclerView.Adapter<NoticiaAdapter.NoticiaViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoticiaViewHolder {
         val itemBinding = NoticiaFilaBinding.inflate(LayoutInflater.from(parent.context),
         parent,false)
-        return NoticiaViewHolder(itemBinding);
+        return NoticiaViewHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: NoticiaViewHolder, position: Int) {

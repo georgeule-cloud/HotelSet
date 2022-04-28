@@ -1,7 +1,6 @@
 package com.hotelset.data
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
@@ -9,7 +8,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.google.firebase.ktx.Firebase
 import com.hotelset.model.Hotel
-import com.hotelset.model.Noticia
 
 class HotelDao {
 

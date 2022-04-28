@@ -31,7 +31,7 @@ class SimboloAdapter: RecyclerView.Adapter<SimboloAdapter.SimboloViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimboloViewHolder {
         val itemBinding = SimboloFilaBinding.inflate(LayoutInflater.from(parent.context),
         parent,false)
-        return SimboloViewHolder(itemBinding);
+        return SimboloViewHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: SimboloViewHolder, position: Int) {

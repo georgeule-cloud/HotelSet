@@ -44,7 +44,7 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelViewHolder {
         val itemBinding = HotelCardBinding.inflate(LayoutInflater.from(parent.context),
         parent,false)
-        return HotelViewHolder(itemBinding);
+        return HotelViewHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: HotelViewHolder, position: Int) {
