@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "109482431547-gnje5no6m4764cummfee2tqilmqs8bl2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hotelset",
+            "certificate_hash": "6d30dc541dc4265b0f6c8c3c9576f5530481f7f3"
+          }
+        },
+        {
+          "client_id": "109482431547-r4lvqvvgik4vktdd744dpe2e10c5ohpc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hotelset",
+            "certificate_hash": "80c8089c7da03eceb84709cbbac8b4342710c819"
+          }
+        },
+        {
           "client_id": "109482431547-b7nofjubtcinqel89ga7609dj4412h9k.apps.googleusercontent.com",
           "client_type": 3
         }
