@@ -22,7 +22,7 @@ class NoticiaAdapter: RecyclerView.Adapter<NoticiaAdapter.NoticiaViewHolder>() {
             itemBinding.noticiaTitle.text = noticia.name
             itemBinding.noticiaDescription.text = noticia.body
             Glide.with(itemBinding.root.context)
-                .load(noticia.rutaImagenNoticia)
+                .load(noticia.image)
                 .sizeMultiplier(0.5F)
                 .into(itemBinding.noticiaImage)
         }

@@ -78,9 +78,6 @@ class AddHotelFragment : Fragment() {
 
         images = Images(
             requireContext(),
-            binding.btPhoto,
-            binding.btRotai,
-            binding.btRotad,
             binding.imagen,
             tomarFotoActivity)
 

@@ -12,7 +12,7 @@ val name: String,
 
 val body: String,
 
-val rutaImagenNoticia: String?,
+val image: String?,
 
 
 ) : Parcelable{
