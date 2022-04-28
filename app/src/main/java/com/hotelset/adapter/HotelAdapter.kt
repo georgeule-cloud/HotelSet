@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.hotelset.databinding.HotelCardBinding
 import com.hotelset.model.Hotel
 import com.hotelset.ui.hotel.HotelFragmentDirections
@@ -24,6 +25,12 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
             itemBinding.tvDescription.text = hotel.description
             itemBinding.tvPhonenumber.text = hotel.phonenumber
             itemBinding.rbStars.rating = (1..5).random().toFloat()
+
+            Glide.with(itemBinding.root.context)
+                .load(hotel.rutaImagen)
+                .circleCrop()
+                .into(itemBinding.ivImage)
+
             val accion = HotelFragmentDirections.actionNavHotelToUpdateHotelFragment(hotel)
             itemBinding.viewCard.setOnClickListener{
                 itemView.findNavController().navigate(accion)
@@ -49,6 +56,5 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
         return hotelsList.size
 
     }
-
 
 }

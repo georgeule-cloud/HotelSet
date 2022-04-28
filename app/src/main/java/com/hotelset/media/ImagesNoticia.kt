@@ -13,18 +13,14 @@ import androidx.core.content.FileProvider
 import com.google.firebase.BuildConfig
 import java.io.File
 
-class Images (
+class ImagesNoticia (
     private val contexto: Context,
-    btPhoto: ImageButton,
-    btRotaL: ImageButton,
-    btRotaR: ImageButton,
+    btAddImagesN: ImageButton,
     private val imagen: ImageView,
     private var tomarFotoActivity: ActivityResultLauncher<Intent>
 ) {
     init {
-        btPhoto.setOnClickListener { tomarFoto() }
-        btRotaL.setOnClickListener { imagen.rotation=imagen.rotation-90f }
-        btRotaR.setOnClickListener { imagen.rotation=imagen.rotation+90f }
+        btAddImagesN.setOnClickListener { tomarFotoN() }
     }
 
 
@@ -32,7 +28,7 @@ class Images (
     private lateinit var currentPhotoPath: String
 
     @SuppressLint("QueryPermissionsNeeded")
-    private fun tomarFoto() {
+    private fun tomarFotoN() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (intent.resolveActivity(contexto.packageManager) != null) {
             imagenFile = createImageFile()
@@ -57,7 +53,7 @@ class Images (
         return image
     }
 
-    fun actualizaFoto() {
+    fun actualizaFotoN() {
         imagen.setImageBitmap(
             BitmapFactory.decodeFile(imagenFile.absolutePath))
     }

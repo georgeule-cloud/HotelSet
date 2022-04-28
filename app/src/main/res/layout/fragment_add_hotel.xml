@@ -6,254 +6,267 @@
     android:layout_height="match_parent"
     tools:context="ui.hotel.AddHotelFragment" >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/et_AddHotel_name"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:ems="20"
-            android:hint="@string/msg_hotelForm_name"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/et_AddHotel_address"
-            android:layout_width="match_parent"
-            android:layout_height="78dp"
-            android:ems="20"
-            android:hint="@string/msg_hotelForm_address"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/et_AddHotel_description"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="20"
-            android:hint="@string/msg_hotelForm_description"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
+            android:orientation="vertical"
+            android:padding="10dp">
+
 
         <EditText
-            android:id="@+id/et_AddHotel_phonenumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="20"
-            android:hint="@string/msg_hotelForm_phonenumber"
-            android:inputType="phone"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/et_AddHotel_website"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:ems="20"
-            android:hint="@string/msg_hotelForm_website"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/et_AddHotel_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="20"
-            android:hint="@string/msg_hotelForm_email"
-            android:inputType="textEmailAddress"
-            android:textSize="20sp" />
-
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="25sp"
-            android:padding="10sp"
-            android:stretchColumns="*">
-            <TableRow
+                android:id="@+id/et_AddHotel_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/tv_latitud1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:text="@string/tv_latitud_lb"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/tv_longitud1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:text="@string/tv_longitud_lb"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/tv_altura1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:text="@string/tv_altura_lb"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-            </TableRow>
-            <TableRow
+                android:layout_height="64dp"
+                android:ems="20"
+                android:hint="@string/msg_hotelForm_name"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_AddHotel_address"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/tv_latitud"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                android:layout_height="78dp"
+                android:ems="20"
+                android:hint="@string/msg_hotelForm_address"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_AddHotel_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:hint="@string/msg_hotelForm_description"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_AddHotel_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:hint="@string/msg_hotelForm_phonenumber"
+                android:inputType="phone"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_AddHotel_website"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:ems="20"
+                android:hint="@string/msg_hotelForm_website"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_AddHotel_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:hint="@string/msg_hotelForm_email"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btAddHotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Hotel"
+                app:rippleColor="@color/purple_200" />
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="25sp"
+                android:padding="10sp"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_latitud1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:text="@string/tv_latitud_lb"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_longitud1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:text="@string/tv_longitud_lb"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_altura1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:text="@string/tv_altura_lb"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_latitud"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_longitud"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_altura"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/msgMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAlignment="center"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/bt_accion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="18sp" />
-                <TextView
-                    android:id="@+id/tv_longitud"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_mic"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/bt_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="18sp" />
-                <TextView
-                    android:id="@+id/tv_altura"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_play" />
+
+                <ImageButton
+                    android:id="@+id/bt_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="18sp" />
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_delete" />
+            </LinearLayout>
 
-            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/bt_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_photo" />
 
-            <ImageButton
-                android:id="@+id/bt_accion"
+                <ImageButton
+                    android:id="@+id/bt_rotai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_rotate_l" />
+
+                <ImageButton
+                    android:id="@+id/bt_rotad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_rotate_r" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_stars"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_mic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                android:layout_height="44dp"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/bt_play"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_play" />
+                <RatingBar
+                    android:id="@+id/rb_stars"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="80dp"
+                    android:layout_height="21dp"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:stepSize="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_name"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/bt_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_delete" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imagen"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:contentDescription="@string/msg_imagen"
+                android:scaleType="centerInside"
+                tools:ignore="ImageContrastCheck"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/bt_photo"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_photo" />
-
-            <ImageButton
-                android:id="@+id/bt_rotai"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_rotate_l" />
-
-            <ImageButton
-                android:id="@+id/bt_rotad"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_rotate_r" />
-
-        </LinearLayout>
-
-        </TableLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_stars"
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            android:orientation="horizontal">
-
-            <RatingBar
-                android:id="@+id/rb_stars"
-                style="@style/Widget.AppCompat.RatingBar.Small"
-                android:layout_width="80dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="12dp"
-                android:numStars="5"
-                android:rating="4"
-                android:stepSize="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_name"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/msgMensaje"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAlignment="center"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imagen"
-            android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:contentDescription="@string/msg_imagen"
-            android:scaleType="centerInside"
-            tools:ignore="ImageContrastCheck"
-            tools:src="@tools:sample/backgrounds/scenic" />
-
-        <Button
-            android:id="@+id/btAddHotel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add Hotel"
-            app:rippleColor="@color/purple_200" />
-
-    </LinearLayout>
-
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,10 +27,10 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import com.hotelset.R
 import com.hotelset.databinding.FragmentAddHotelBinding
+import com.hotelset.media.Audios
+import com.hotelset.media.Images
 import com.hotelset.model.Hotel
 import com.hotelset.viewmodel.HotelViewModel
-import com.lugares.utiles.Audios
-import com.lugares.utiles.Images
 
 class AddHotelFragment : Fragment() {
     private lateinit var hotelViewModel: HotelViewModel
@@ -48,12 +48,9 @@ class AddHotelFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-         hotelViewModel =
-            ViewModelProvider(this).get(HotelViewModel::class.java)
-
+        hotelViewModel = ViewModelProvider(this).get(HotelViewModel::class.java)
         _binding = FragmentAddHotelBinding.inflate(inflater, container, false)
         binding.btAddHotel.setOnClickListener{
-            //addHotel()
             binding.progressBar.visibility = ProgressBar.VISIBLE
             binding.msgMensaje.text = getString(R.string.msg_subiendo_audio)
             binding.msgMensaje.visibility = TextView.VISIBLE
@@ -85,8 +82,7 @@ class AddHotelFragment : Fragment() {
             binding.btRotai,
             binding.btRotad,
             binding.imagen,
-            tomarFotoActivity
-        )
+            tomarFotoActivity)
 
         ubicaGPS()
         return binding.root
@@ -97,7 +93,7 @@ class AddHotelFragment : Fragment() {
 
         if (audioFile.exists() && audioFile.isFile && audioFile.canRead()){
             val ruta = Uri.fromFile(audioFile)
-            val rutaNube="lugaresApp/${Firebase.auth.currentUser?.email}/audios/${audioFile.name}"
+            val rutaNube="hotelAPP/${Firebase.auth.currentUser?.email}/audios/${audioFile.name}"
 
             val referencia: StorageReference = Firebase.storage.reference.child(rutaNube)
             referencia.putFile(ruta)
@@ -120,7 +116,7 @@ class AddHotelFragment : Fragment() {
         val imagenFile = images.imagenFile
         if (imagenFile.exists() && imagenFile.isFile && imagenFile.canRead()){
             val ruta = Uri.fromFile(imagenFile)
-            val rutaNube="lugaresApp/${Firebase.auth.currentUser?.email}/imagenes/${imagenFile.name}"
+            val rutaNube="hotelAPP/${Firebase.auth.currentUser?.email}/imagenes/${imagenFile.name}"
 
             val referencia: StorageReference = Firebase.storage.reference.child(rutaNube)
             referencia.putFile(ruta)
@@ -128,7 +124,7 @@ class AddHotelFragment : Fragment() {
                     referencia.downloadUrl
                         .addOnSuccessListener {
                             val rutaImagen = it.toString()
-                            addHotel(rutaAudio,"")
+                            addHotel(rutaAudio,rutaImagen)
                         }
                 }
                 .addOnFailureListener{

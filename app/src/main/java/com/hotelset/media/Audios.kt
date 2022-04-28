@@ -1,4 +1,4 @@
-package com.lugares.utiles
+package com.hotelset.media
 
 import android.Manifest
 import android.app.Activity
