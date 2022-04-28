@@ -25,12 +25,6 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
             itemBinding.tvDescription.text = hotel.description
             itemBinding.tvPhonenumber.text = hotel.phonenumber
             itemBinding.rbStars.rating = (1..5).random().toFloat()
-
-            Glide.with(itemBinding.root.context)
-                .load(hotel.rutaImagen)
-                .circleCrop()
-                .into(itemBinding.ivImage)
-
             val accion = HotelFragmentDirections.actionNavHotelToUpdateHotelFragment(hotel)
             itemBinding.viewCard.setOnClickListener{
                 itemView.findNavController().navigate(accion)
