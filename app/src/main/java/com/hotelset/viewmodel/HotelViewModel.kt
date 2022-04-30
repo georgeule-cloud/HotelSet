@@ -9,12 +9,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HotelViewModel (application: Application) : AndroidViewModel(application) {
-    val getAllHotels: MutableLiveData<List<Hotel>>
-
-    private val repository : HotelRepository = HotelRepository(HotelDao())
+    var getAllHotels: MutableLiveData<List<Hotel>>
+    var getPlayaHotels: MutableLiveData<List<Hotel>>
+    var getMontanaHotels: MutableLiveData<List<Hotel>>
+    var getCiudadHotels: MutableLiveData<List<Hotel>>
+    private var repository : HotelRepository = HotelRepository(HotelDao())
 
     init {
         getAllHotels = repository.getAllHotels
+        getPlayaHotels = repository.getPlayaHotels
+        getMontanaHotels = repository.getMontanaHotels
+        getCiudadHotels = repository.getCiudadHotels
     }
 
     fun addHotel(hotel: Hotel) {

@@ -11,11 +11,11 @@
         android:label="@string/menu_hotel"
         tools:layout="@layout/fragment_hotel" >
         <action
-            android:id="@+id/action_nav_hotel_to_addHotelFragment"
-            app:destination="@id/nav_addHotel" />
-        <action
             android:id="@+id/action_nav_hotel_to_updateHotelFragment"
             app:destination="@id/nav_updateHotel" />
+        <action
+            android:id="@+id/action_nav_hotel_to_nav_addHotel"
+            app:destination="@id/nav_addHotel" />
     </fragment>
 
     <fragment

@@ -1,4 +1,4 @@
-package com.hotelset.media
+package com.hotelset.utiles
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,25 +10,29 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.content.FileProvider
-import com.google.firebase.BuildConfig
+import com.hotelset.BuildConfig
+import com.hotelset.utiles.OtrosUtiles
 import java.io.File
 
-class ImagesNoticia (
+class ImagenUtiles (
     private val contexto: Context,
-    btAddImagesN: ImageButton,
+    btPhoto: ImageButton,
+    btRotaL: ImageButton,
+    btRotaR: ImageButton,
     private val imagen: ImageView,
     private var tomarFotoActivity: ActivityResultLauncher<Intent>
 ) {
     init {
-        btAddImagesN.setOnClickListener { tomarFotoN() }
+        btPhoto.setOnClickListener { tomarFoto() }
+        btRotaL.setOnClickListener { imagen.rotation=imagen.rotation-90f }
+        btRotaR.setOnClickListener { imagen.rotation=imagen.rotation+90f }
     }
-
 
     lateinit var imagenFile: File
     private lateinit var currentPhotoPath: String
 
     @SuppressLint("QueryPermissionsNeeded")
-    private fun tomarFotoN() {
+    private fun tomarFoto() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (intent.resolveActivity(contexto.packageManager) != null) {
             imagenFile = createImageFile()
@@ -46,14 +50,14 @@ class ImagesNoticia (
         val storageDir: File? =
             contexto.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         val image= File.createTempFile(
-            archivo,
-            ".jpg",
-            storageDir    )
+            archivo,       /* prefijo */
+            ".jpg",  /* extensión */
+            storageDir    /* directorio */)
         currentPhotoPath = image.absolutePath
         return image
     }
 
-    fun actualizaFotoN() {
+    fun actualizaFoto() {
         imagen.setImageBitmap(
             BitmapFactory.decodeFile(imagenFile.absolutePath))
     }

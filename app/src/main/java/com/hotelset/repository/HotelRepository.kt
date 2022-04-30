@@ -6,11 +6,19 @@ import com.hotelset.data.HotelDao
 import com.hotelset.model.Hotel
 
 class HotelRepository (private val hotelDao: HotelDao){
-    val getAllHotels: MutableLiveData<List<Hotel>> = hotelDao.getHotels()
+    var getAllHotels: MutableLiveData<List<Hotel>> = hotelDao.getHotels()
+    var getPlayaHotels: MutableLiveData<List<Hotel>> = hotelDao.getPlayaHotels()
+    var getMontanaHotels: MutableLiveData<List<Hotel>> = hotelDao.getMontanaHotels()
+    var getCiudadHotels: MutableLiveData<List<Hotel>> = hotelDao.getCiudadHotels()
+
+
+
+
 
     suspend fun addHotel(hotel: Hotel) {
         hotelDao.saveHotel(hotel)
     }
+
     suspend fun updateHotel(hotel: Hotel) {
         hotelDao.saveHotel(hotel)
     }

@@ -19,7 +19,6 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import com.hotelset.R
 import com.hotelset.databinding.FragmentAddNoticiaBinding
-import com.hotelset.media.ImagesNoticia
 import com.hotelset.model.Noticia
 import com.hotelset.viewmodel.NoticiaViewModel
 
@@ -28,9 +27,6 @@ class AddNoticiaFragment : Fragment() {
 
     private var _binding: FragmentAddNoticiaBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var images: ImagesNoticia
-    private lateinit var tomarFotoActivity: ActivityResultLauncher<Intent>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,55 +38,17 @@ class AddNoticiaFragment : Fragment() {
 
         _binding = FragmentAddNoticiaBinding.inflate(inflater, container, false)
         binding.btAddNoticia.setOnClickListener{
-            //addNoticia()
-            subeImagenNube()
+            addNoticia()
         }
-
-        tomarFotoActivity = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()){ result ->
-            if(result.resultCode == Activity.RESULT_OK) {
-                images.actualizaFotoN()
-            }
-        }
-
-        images = ImagesNoticia(
-            requireContext(),
-            binding.btAddImagesN,
-            binding.imageView2,
-            tomarFotoActivity
-        )
 
         return binding.root
     }
 
-    private fun subeImagenNube() {
-        val imagenFile = images.imagenFile
-        if (imagenFile.exists() && imagenFile.isFile && imagenFile.canRead()){
-            val ruta = Uri.fromFile(imagenFile)
-            val rutaNube="hotelAPP/${Firebase.auth.currentUser?.email}/imagenesNoticia/${imagenFile.name}"
-
-            val referencia: StorageReference = Firebase.storage.reference.child(rutaNube)
-            referencia.putFile(ruta)
-                .addOnSuccessListener {
-                    referencia.downloadUrl
-                        .addOnSuccessListener {
-                            val rutaImagen = it.toString()
-                            addNoticia(rutaImagen)
-                        }
-                }
-                .addOnFailureListener{
-                    addNoticia("")
-                }
-        }else{
-            addNoticia("")
-        }
-    }
-
-    private fun addNoticia(rutaImagenNoticia: String) {
+    private fun addNoticia() {
         val name = binding.etAddNoticiaTitle.text.toString()
         if (name.isNotEmpty()){
             val body = binding.etAddNoticiaBody.text.toString()
-            val noticia = Noticia("",name,body,rutaImagenNoticia)
+            val noticia = Noticia("",name,body)
             noticiasViewModel.addNoticia(noticia)
             Toast.makeText(requireContext(),getString(R.string.msg_add_noticia), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addNoticiaFragment_to_nav_noticias)

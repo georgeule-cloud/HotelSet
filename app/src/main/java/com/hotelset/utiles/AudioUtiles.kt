@@ -1,4 +1,4 @@
-package com.hotelset.media
+package com.hotelset.utiles
 
 import android.Manifest
 import android.app.Activity
@@ -14,7 +14,7 @@ import com.hotelset.R
 import java.io.File
 import java.io.IOException
 
-class Audios(
+class AudioUtiles(
     private val actividad: Activity,
     private val contexto: Context,
     private val btAccion: ImageButton,

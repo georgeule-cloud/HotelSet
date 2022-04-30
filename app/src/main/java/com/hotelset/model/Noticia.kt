@@ -12,10 +12,8 @@ val name: String,
 
 val body: String,
 
-val image: String?,
-
 
 ) : Parcelable{
     constructor():
-            this("","","","")
+            this("","","")
 }

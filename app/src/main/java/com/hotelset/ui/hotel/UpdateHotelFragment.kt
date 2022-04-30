@@ -67,7 +67,7 @@ class UpdateHotelFragment : Fragment() {
             binding.btPlay.isEnabled=false
         }
 
-        if (args.hotel.rutaAudio?.isNotEmpty() == true){
+        if (args.hotel.rutaImagen?.isNotEmpty() == true){
             Glide.with(requireContext())
                 .load(args.hotel.rutaImagen)
                 .fitCenter()
@@ -158,8 +158,8 @@ class UpdateHotelFragment : Fragment() {
             val address = binding.etAddHotelAddress.text.toString()
             val description = binding.etAddHotelDescription.text.toString()
             val website = binding.etAddHotelWebsite.text.toString()
-            val hotel = Hotel("",name,address,description,phone,website,email,
-                args.hotel.latitude,args.hotel.longitude,args.hotel.height,2,0.0,"","")
+            val hotel = Hotel(args.hotel.id,name,address,description,phone,website,email,
+                args.hotel.latitude,args.hotel.longitude,args.hotel.height,2,0.0,args.hotel.rutaAudio, args.hotel.rutaImagen,"Playa")
             hotelViewModel.updateHotel(hotel)
             Toast.makeText(requireContext(),getString(R.string.msg_update_hotel), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_updateHotelFragment_to_nav_hotel)

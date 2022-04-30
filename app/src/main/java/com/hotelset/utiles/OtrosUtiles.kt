@@ -1,4 +1,4 @@
-package com.hotelset.media
+package com.hotelset.utiles
 
 import java.text.SimpleDateFormat
 import java.util.*

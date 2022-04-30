@@ -11,8 +11,7 @@ import com.google.firebase.ktx.Firebase
 import com.hotelset.model.Hotel
 import com.hotelset.model.Noticia
 
-class HotelDao {
-
+class HotelDao() {
     private val coleccion1 = "hotelAPP"
     private val coleccion2 = "misHoteles"
     private val usuario = Firebase.auth.currentUser?.email.toString()
@@ -38,7 +37,94 @@ class HotelDao {
                     instantanea.documents.forEach{
                         val hotel = it.toObject(Hotel::class.java)
                         if (hotel!= null){
-                            lista.add(hotel)
+
+                                    lista.add(hotel)
+                            }
+                    }
+                    listaHoteles.value = lista
+                }
+            }
+
+        return listaHoteles
+
+    }
+
+    fun getPlayaHotels(): MutableLiveData<List<Hotel>> {
+        val listaHoteles = MutableLiveData<List<Hotel>>()
+
+        firestore.collection(coleccion1).document(usuario).collection(coleccion2)
+            .addSnapshotListener{ instantanea, e ->
+                if (e != null){
+                    return@addSnapshotListener
+                }
+
+                if(instantanea != null){
+                    val lista = ArrayList<Hotel>()
+
+                    instantanea.documents.forEach{
+                        val hotel = it.toObject(Hotel::class.java)
+                        if (hotel!= null){
+
+                        if(hotel.tipo.equals("Playa")){
+                                        lista.add(hotel)
+                        }
+                            }
+                    }
+                    listaHoteles.value = lista
+                }
+            }
+
+        return listaHoteles
+
+    }
+    fun getMontanaHotels(): MutableLiveData<List<Hotel>> {
+        val listaHoteles = MutableLiveData<List<Hotel>>()
+
+        firestore.collection(coleccion1).document(usuario).collection(coleccion2)
+            .addSnapshotListener{ instantanea, e ->
+                if (e != null){
+                    return@addSnapshotListener
+                }
+
+                if(instantanea != null){
+                    val lista = ArrayList<Hotel>()
+
+                    instantanea.documents.forEach{
+                        val hotel = it.toObject(Hotel::class.java)
+                        if (hotel!= null){
+
+                            if(hotel.tipo.equals("Montana")){
+                                lista.add(hotel)
+                            }
+                        }
+                    }
+                    listaHoteles.value = lista
+                }
+            }
+
+        return listaHoteles
+
+    }
+
+    fun getCiudadHotels(): MutableLiveData<List<Hotel>> {
+        val listaHoteles = MutableLiveData<List<Hotel>>()
+
+        firestore.collection(coleccion1).document(usuario).collection(coleccion2)
+            .addSnapshotListener{ instantanea, e ->
+                if (e != null){
+                    return@addSnapshotListener
+                }
+
+                if(instantanea != null){
+                    val lista = ArrayList<Hotel>()
+
+                    instantanea.documents.forEach{
+                        val hotel = it.toObject(Hotel::class.java)
+                        if (hotel!= null){
+
+                            if(hotel.tipo.equals("Ciudad")){
+                                lista.add(hotel)
+                            }
                         }
                     }
                     listaHoteles.value = lista
