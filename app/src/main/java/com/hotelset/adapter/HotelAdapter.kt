@@ -29,6 +29,7 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
             Glide.with(itemBinding.root.context)
                 .load(hotel.rutaImagen)
                 .circleCrop()
+                .sizeMultiplier(0.5F)
                 .into(itemBinding.ivImage)
 
             val accion = HotelFragmentDirections.actionNavHotelToUpdateHotelFragment(hotel)

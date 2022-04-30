@@ -39,6 +39,9 @@ class AddHotelFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var audios: Audios
+    private  var rutaAudio: String=""
+    private  var rutaImagen: String=""
+
 
     private lateinit var images: Images
     private lateinit var tomarFotoActivity: ActivityResultLauncher<Intent>
@@ -48,15 +51,20 @@ class AddHotelFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        hotelViewModel = ViewModelProvider(this).get(HotelViewModel::class.java)
+        hotelViewModel = ViewModelProvider(this)[HotelViewModel::class.java]
         _binding = FragmentAddHotelBinding.inflate(inflater, container, false)
         binding.btAddHotel.setOnClickListener{
-            binding.progressBar.visibility = ProgressBar.VISIBLE
-            binding.msgMensaje.text = getString(R.string.msg_subiendo_audio)
-            binding.msgMensaje.visibility = TextView.VISIBLE
+
+            //binding.progressBar.visibility = ProgressBar.VISIBLE
+            //binding.msgMensaje.text = getString(R.string.msg_subiendo_audio)
+            //binding.msgMensaje.visibility = TextView.VISIBLE
             subeAudioNube()
+            subeImagenNube()
+            addHotel()
 
         }
+        ubicaGPS()
+
 
         audios = Audios(
 
@@ -78,12 +86,16 @@ class AddHotelFragment : Fragment() {
 
         images = Images(
             requireContext(),
+            binding.btPhoto,
+            binding.btRotai,
+            binding.btRotad,
             binding.imagen,
             tomarFotoActivity)
 
-        ubicaGPS()
+
         return binding.root
     }
+    private var conPermisos: Boolean = true
 
     private fun subeAudioNube() {
         val audioFile = audios.audioFile
@@ -97,19 +109,21 @@ class AddHotelFragment : Fragment() {
                 .addOnSuccessListener {
                     referencia.downloadUrl
                         .addOnSuccessListener {
-                            val rutaAudio = it.toString()
-                            subeImagenNube(rutaAudio)
+                            rutaAudio = it.toString()
                         }
                 }
-                .addOnFailureListener{
-                    subeImagenNube("")
+                .addOnFailureListener(){
+                    Toast.makeText(requireContext(),"error audio subida", Toast.LENGTH_LONG).show()
+
                 }
-        }else{
-            subeImagenNube("")
+        }
+        else
+        {
+
         }
     }
 
-    private fun subeImagenNube(rutaAudio: String) {
+    private fun subeImagenNube() {
         val imagenFile = images.imagenFile
         if (imagenFile.exists() && imagenFile.isFile && imagenFile.canRead()){
             val ruta = Uri.fromFile(imagenFile)
@@ -120,19 +134,20 @@ class AddHotelFragment : Fragment() {
                 .addOnSuccessListener {
                     referencia.downloadUrl
                         .addOnSuccessListener {
-                            val rutaImagen = it.toString()
-                            addHotel(rutaAudio,rutaImagen)
+                            rutaImagen = it.toString()
+
                         }
                 }
                 .addOnFailureListener{
-                    addHotel(rutaAudio,"")
+                    Toast.makeText(requireContext(),"error foto subida", Toast.LENGTH_LONG).show()
+
                 }
         }else{
-            addHotel(rutaAudio,"")
+
         }
     }
 
-    private var conPermisos: Boolean = true
+
 
 
     private fun ubicaGPS() {
@@ -179,7 +194,7 @@ class AddHotelFragment : Fragment() {
         }
     }
 
-    private fun addHotel(rutaAudio: String,rutaImagen: String) {
+    private fun addHotel() {
         val name = binding.etAddHotelName.text.toString()
         if (name.isNotEmpty()){
             val email = binding.etAddHotelEmail.text.toString()
@@ -191,7 +206,7 @@ class AddHotelFragment : Fragment() {
             val longitud = binding.tvLongitud.text.toString().toDouble()
             val altura = binding.tvAltura.text.toString().toDouble()
             val hotel = Hotel("",name,address,description,phone,website,email,latitud,longitud,
-                altura,2,0.0,rutaAudio,rutaImagen)
+                altura,2,0.0, rutaAudio,rutaImagen)
             hotelViewModel.addHotel(hotel)
             Toast.makeText(requireContext(),getString(R.string.msg_add_hotel), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addHotelFragment_to_nav_hotel)

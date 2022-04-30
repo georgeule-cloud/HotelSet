@@ -49,7 +49,7 @@ class HotelDao {
 
     }
 
-    suspend fun saveHotel(hotel: Hotel){
+    fun saveHotel(hotel: Hotel){
 
         val documento: DocumentReference
 
@@ -66,7 +66,7 @@ class HotelDao {
 
     }
 
-    suspend fun deleteHotel(hotel: Hotel){
+    fun deleteHotel(hotel: Hotel){
 
         if (hotel.id.isNotEmpty()){
             firestore.collection(coleccion1).document(usuario).collection(coleccion2).document(hotel.id).delete()
